@@ -1,0 +1,15 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.estadisticas{
+    h2{
+        @include m.textoh2(v.$secundario, v.$primario, 2.7rem);
+    }
+
+    @include m.tablet {
+        h2{
+            @include m.textoh2(v.$secundario, v.$primario, 3.3rem);
+        }    
+    }
+}

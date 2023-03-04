@@ -1,0 +1,23 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.crear-podcast{
+    @include m.tablet {
+        .podcast-grid{
+            @include m.grid(2,5rem);
+            align-items: center;
+        }
+    }
+
+    .podcast-texo{
+        padding: 0 1rem 0 1rem;
+        h2{
+            @include m.textoh2(v.$negro,v.$primario, 3.3rem);
+        }
+        p{
+            line-height: 1.5;
+            font-size: 1.8rem;
+        }
+    }
+}

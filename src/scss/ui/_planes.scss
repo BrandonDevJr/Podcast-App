@@ -1,0 +1,80 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.planes{
+    background-color: v.$secundario;
+
+    h2{
+        @include m.textoh2(v.$blanco,v.$primario,3rem);
+    }
+
+    .descripcion{
+        color: v.$blanco;
+    }
+
+    .nuestros-planes{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+
+        @include m.tablet {
+            flex-direction: row;
+            margin: 8rem 0 2rem 0;
+        }
+
+        .plan{
+            flex-grow:1;
+            background-color: v.$blanco;
+            padding: 4rem 2rem;
+            margin-top: 1rem;
+
+            @include m.tablet {
+                margin-top: unset;
+                &:hover{
+                     transform: scale(1.1);
+                     transition-property: transform;
+                     transition-duration: 300ms;
+                }
+            }
+            
+            &.negocio{
+                order: -1;
+                background-color: v.$primario;
+                padding: 4rem 2rem;
+
+                @include m.tablet {
+                    padding: 4rem 2rem 0rem;
+                    order:unset;
+                    margin-top:-4rem ;
+                    margin-bottom:-3rem ;
+                    border-radius: 1.6rem;
+                    background-position: 50% 4rem;
+                    z-index: 100;
+                }
+            }
+    
+            .precio{
+                font-weight: 900;
+                text-align: center;
+            }
+            .listado{
+                text-align: center;
+                line-height: 2;
+            }
+        }
+
+        @include m.tablet {
+            @include m.grid(5,0)
+        }
+
+        :nth-child(1){
+            grid-column: 2 / 3;
+        }
+    }
+    .imagen-plan{
+        margin: 0 auto;
+        width: 50%;
+        padding: 1rem;
+    }
+
+}
